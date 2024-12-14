@@ -1,1 +1,28 @@
-spring.application.name=spring-boot-keycloak-integration
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8087/auth/realms/bank-management-system
+          jwk-set-uri: http://localhost:8087/auth/realms/bank-management-system/protocol/openid-connect/certs
+          
+    application:
+      name: spring-boot-keycloak-integration
+      
+server:
+  port: 8443
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: bank-management-system
+    key-store-type: PKCS12
+    key-alias: bank-management-system
+    enabled: true
+
+keycloak:
+  realm: bank-management-system
+  auth-server-url: http://localhost:8087/auth
+  ssl-required: none
+  resource: bank-management-system
+  credentials:
+    secret: LnQ4Q2mlY6Yq140E7QMlz8BQzkg2j7Tq
+  use-resource-role-mappings: true
