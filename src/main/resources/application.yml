@@ -1,13 +1,13 @@
 spring:
+  application:
+    name: spring-boot-keycloak-integration
+
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8087/realms/bank-management-system
           jwk-set-uri: http://localhost:8087/realms/bank-management-system/protocol/openid-connect/certs
-          
-    application:
-      name: spring-boot-keycloak-integration
       
 server:
   port: 8443

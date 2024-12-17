@@ -75,8 +75,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8087/auth/realms/bank-management-system
-          jwk-set-uri: http://localhost:8087/auth/realms/bank-management-system/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8087/realms/bank-management-system
+          jwk-set-uri: http://localhost:8087/realms/bank-management-system/protocol/openid-connect/certs
           
     application:
       name: spring-boot-keycloak-integration
@@ -92,7 +92,7 @@ server:
 
 keycloak:
   realm: bank-management-system
-  auth-server-url: http://localhost:8087/auth
+  auth-server-url: http://localhost:8087
   ssl-required: external
   resource: bank-management-system
   credentials:
